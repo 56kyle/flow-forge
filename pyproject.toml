@@ -51,6 +51,9 @@ myst-parser = {version = ">=0.16.1"}
 [tool.poetry.scripts]
 flow-forge = "flow_forge.__main__:main"
 
+[tool.poetry.group.dev.dependencies]
+pytest-static = "^0.3.0"
+
 [tool.coverage.paths]
 source = ["src", "*/site-packages"]
 tests = ["tests", "*/tests"]
