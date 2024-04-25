@@ -8,4 +8,3 @@ class ProcessStep(Protocol[P, T]):
     def __call__(self, *args: P.args, **kwargs: P.kwargs) -> T:
         ...
 
-

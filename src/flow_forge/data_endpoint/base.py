@@ -1,4 +1,4 @@
-"""TODO."""
+"""Module containing the base Protocol specification for a DataEndpoint."""
 from __future__ import annotations
 
 from typing_extensions import Protocol, TypeVar

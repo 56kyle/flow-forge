@@ -1,9 +1,11 @@
+"""Module containing the implementation of a File DataEndpoint."""
 from __future__ import annotations
 from dataclasses import dataclass
 from functools import cached_property, partial, wraps
 from typing import TypeVar, TypedDict, Callable, cast
 
 import fsspec
+from fsspec import AbstractFileSystem
 from fsspec.core import OpenFile
 from typing_extensions import Concatenate, TypeAlias, Unpack
 
