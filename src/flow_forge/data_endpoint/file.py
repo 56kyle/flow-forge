@@ -2,7 +2,7 @@
 from __future__ import annotations
 from dataclasses import dataclass
 from functools import cached_property, partial, wraps
-from typing import TypeVar, TypedDict, Callable, cast
+from typing import TypeVar, TypedDict, Callable, cast, Any
 
 import fsspec
 from fsspec import AbstractFileSystem
@@ -14,7 +14,7 @@ from flow_forge.data_endpoint.base import DataEndpoint
 
 
 @dataclass(frozen=True)
-class FileDataEndpoint(DataEndpoint[P, OpenFile]):
+class FileDataEndpoint(DataEndpoint[Any, OpenFile]):
     """Implementation of a File DataEndpoint."""
     path: str
 

@@ -58,4 +58,3 @@ class JsonFileToPdDataFrameExtractor(FileToPdDataFrameExtractor[P]):
         default=JsonFileToPdDataFrameTransformer()
     )
 
-
