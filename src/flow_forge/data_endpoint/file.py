@@ -14,7 +14,7 @@ from flow_forge.data_endpoint.base import DataEndpoint
 
 
 @dataclass(frozen=True)
-class FileDataEndpoint(DataEndpoint[Any, OpenFile]):
+class FileDataEndpoint(DataEndpoint[P, OpenFile]):
     """Implementation of a File DataEndpoint."""
     path: str
 
