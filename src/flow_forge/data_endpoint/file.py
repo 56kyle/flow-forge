@@ -1,21 +1,21 @@
 """Module containing the implementation of a File DataEndpoint."""
+
 from __future__ import annotations
+
 from dataclasses import dataclass
-from functools import cached_property, partial, wraps
-from typing import TypeVar, TypedDict, Callable, cast, Any
+from typing import TypeVar
 
 import fsspec
-from fsspec import AbstractFileSystem
 from fsspec.core import OpenFile
-from typing_extensions import Concatenate, TypeAlias, Unpack
 
-from flow_forge.custom_typing import P, T
+from flow_forge.custom_typing import P
 from flow_forge.data_endpoint.base import DataEndpoint
 
 
 @dataclass(frozen=True)
 class FileDataEndpoint(DataEndpoint[P, OpenFile]):
     """Implementation of a File DataEndpoint."""
+
     path: str
 
     def __call__(self, *args: P.args, **kwargs: P.kwargs) -> OpenFile:
@@ -24,4 +24,3 @@ class FileDataEndpoint(DataEndpoint[P, OpenFile]):
 
 
 FileDataEndpointType = TypeVar("FileDataEndpointType", bound=FileDataEndpoint)
-

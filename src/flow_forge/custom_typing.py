@@ -1,6 +1,10 @@
+"""Custom typing for the flow forge package."""
+
 from typing import TypeVar
 
-from typing_extensions import ParamSpec, TypeVarTuple
+from typing_extensions import ParamSpec
+from typing_extensions import TypeVarTuple
+
 
 T: TypeVar = TypeVar("T")
 T2: TypeVar = TypeVar("T2")
@@ -13,6 +17,3 @@ Ts: TypeVarTuple = TypeVarTuple("Ts")
 
 P: ParamSpec = ParamSpec("P")
 P2: ParamSpec = ParamSpec("P2")
-
-
-
