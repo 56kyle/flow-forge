@@ -18,7 +18,7 @@ class FileDataEndpoint(DataEndpoint[P, OpenFile]):
 
     path: str
 
-    def __call__(self, *args: P.args, **kwargs: P.kwargs) -> OpenFile:
+    def get_connection(self, *args: P.args, **kwargs: P.kwargs) -> OpenFile:
         """TODO."""
         return fsspec.open(self.path, *args, **kwargs)
 
