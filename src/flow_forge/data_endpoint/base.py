@@ -5,15 +5,20 @@ from __future__ import annotations
 from typing_extensions import Protocol
 from typing_extensions import TypeVar
 
+from flow_forge.custom_typing import ConnectionType
+from flow_forge.custom_typing import MetadataType
 from flow_forge.custom_typing import P
-from flow_forge.custom_typing import T
 
 
-class DataEndpoint(Protocol[P, T]):
+class DataEndpoint(Protocol[P, ConnectionType, MetadataType]):
     """Protocol specification for a Generic DataEndpoint."""
 
-    def get_connection(self, *args: P.args, **kwargs: P.kwargs) -> T:
+    def get_connection(self, *args: P.args, **kwargs: P.kwargs) -> ConnectionType:
         """Returns a connection to the Generic DataEndpoint."""
+        ...
+
+    def get_metadata(self, *args: P.args, **kwargs: P.kwargs) -> MetadataType:
+        """Returns a metadata representation of the DataEndpoint."""
         ...
 
 

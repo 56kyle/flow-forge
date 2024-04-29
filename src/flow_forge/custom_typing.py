@@ -12,6 +12,8 @@ T_co: TypeVar = TypeVar("T_co", covariant=True)
 DataType: TypeVar = TypeVar("DataType")
 InputDataType: TypeVar = TypeVar("InputDataType")
 OutputDataType: TypeVar = TypeVar("OutputDataType")
+ConnectionType: TypeVar = TypeVar("ConnectionType")
+MetadataType: TypeVar = TypeVar("MetadataType")
 
 Ts: TypeVarTuple = TypeVarTuple("Ts")
 
