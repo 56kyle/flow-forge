@@ -1,17 +1,15 @@
 """Module containing the base Protocol specification for an Extractor."""
 
-from typing_extensions import Concatenate
+from typing import Any
 
-from flow_forge.custom_typing import P, DataType, T
-from flow_forge.data_endpoint.base import DataEndpoint
+from flow_forge.custom_typing import T
+from flow_forge.data_endpoint.base import DataEndpointType
 from flow_forge.process_step import ProcessStep
 
 
-class Extractor(ProcessStep[Concatenate[DataEndpoint[P, T], P], DataType]):
+class Extractor(ProcessStep[DataEndpointType, T]):
     """Protocol specification for a Generic Extractor."""
 
-    def __call__(self, source: DataEndpoint[P, T], /, *args: P.args, **kwargs: P.kwargs) -> DataType:
+    def __call__(self, source: DataEndpointType, /, *args: Any, **kwargs: Any) -> T:
         """Runs the Extractor."""
         ...
-
-

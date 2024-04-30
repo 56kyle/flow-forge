@@ -7,12 +7,4 @@ from flow_forge.data_endpoint.file import FileDataEndpoint
 from flow_forge.extractor.file import FileExtractor
 
 
-class FileToOpenFileExtractor(FileExtractor[P, OpenFile]):
-    """Protocol specification for a FileDataEndpoint to OpenFile Extractor."""
-
-    def __call__(
-        self, source: FileDataEndpoint[P], /, *args: P.args, **kwargs: P.kwargs
-    ) -> OpenFile:
-        """Extracts an OpenFile from the given FileDataEndpoint."""
-        with source.get_connection(*args, **kwargs) as file:
-            return file
+FileToOpenFileExtractor = FileExtractor[FileDataEndpoint[P], OpenFile]
