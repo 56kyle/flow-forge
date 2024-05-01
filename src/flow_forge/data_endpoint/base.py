@@ -18,6 +18,6 @@ class DataEndpoint(Protocol[ConnectionType]):
         ...
 
 
-DataEndpointType: TypeVar = TypeVar("DataEndpointType", bound=DataEndpoint)
-DataSourceType: TypeVar = TypeVar("DataSourceType", bound=DataEndpoint)
-DataSinkType: TypeVar = TypeVar("DataSinkType", bound=DataEndpoint)
+DataEndpointType: TypeVar = TypeVar("DataEndpointType", bound=DataEndpoint, covariant=True)
+DataSourceType: TypeVar = TypeVar("DataSourceType", bound=DataEndpoint, covariant=True)
+DataSinkType: TypeVar = TypeVar("DataSinkType", bound=DataEndpoint, covariant=True)

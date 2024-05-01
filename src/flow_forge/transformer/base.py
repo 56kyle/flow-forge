@@ -12,7 +12,7 @@ class Transformer(ProcessStep[Concatenate[InputDataType, P], OutputDataType]):
     """Protocol specification for a Generic Transformer."""
 
     def __call__(
-        self, data: InputDataType, /, *args: P.args, **kwargs: P.kwargs
+        self, data: InputDataType, *args: P.args, **kwargs: P.kwargs
     ) -> OutputDataType:
         """Runs the Transformer."""
         ...
